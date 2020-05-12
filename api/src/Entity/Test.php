@@ -17,7 +17,8 @@ use Symfony\Component\Serializer\Annotation\Groups;
  *         "put"={
  *              "normalization_context"={"groups"={"put_toto"}},
  *              "denormalization_context"={"groups"={"put_write_toto"}}
- *          }
+ *          },
+ *          "delete"
  *     },
  *     collectionOperations={
  *         "get",
