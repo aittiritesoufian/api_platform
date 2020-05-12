@@ -10,10 +10,11 @@ use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * @ApiResource(
+ *     attributes={"security"="is_granted('ROLE_USER')},
  *     normalizationContext={"groups"={"read"}},
  *     denormalizationContext={"groups"={"write"}},
  *     itemOperations={
- *         "get",
+ *         "get"={"security"="is_granted('ROLE_USER') and object.owner == user"},
  *         "put"={
  *              "normalization_context"={"groups"={"put_toto"}},
  *              "denormalization_context"={"groups"={"put_write_toto"}}
