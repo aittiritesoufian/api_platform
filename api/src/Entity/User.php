@@ -11,7 +11,7 @@ use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * @ApiResource(
- *     normalizationContext={"groups"={"read"}},
+ *     normalizationContext={"groups"={"user_read"}},
  *     denormalizationContext={"groups"={"write"}},
  *     itemOperations={
  *         "get",
@@ -35,19 +35,19 @@ class User implements UserInterface
      * @ORM\Id()
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
-     * @Groups("read")
+     * @Groups("user_read")
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=180, unique=true)
-     * @Groups({"read","write"})
+     * @Groups({"user_read","write"})
      */
     private $email;
 
     /**
      * @ORM\Column(type="json")
-     * @Groups({"read","write"})
+     * @Groups({"user_read","write"})
      */
     private $roles = [];
 
@@ -60,7 +60,7 @@ class User implements UserInterface
 
     /**
      * @ORM\OneToMany(targetEntity="App\Entity\Offre", mappedBy="owner", orphanRemoval=true)
-     * @Groups("read")
+     * @Groups("user_read")
      */
     private $offres;
 
