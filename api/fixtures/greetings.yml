@@ -1,0 +1,5 @@
+App\Entity\Greeting: 
+  greeting_{1..50}:
+      name: <foo("PLOP")>
+      #name: <word()>
+      #name: <{app.alice.parameters.foo1}>

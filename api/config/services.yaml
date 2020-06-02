@@ -29,3 +29,6 @@ services:
         decorates: 'api_platform.swagger.normalizer.documentation'
         arguments: ['@App\Swagger\SwaggerDecorator.inner']
         autoconfigure: false
+
+    App\DataFixtures\Faker\Provider\FooProvider:
+        tags: [ { name: nelmio_alice.faker.provider } ]
